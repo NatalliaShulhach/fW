@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+    <script charset="utf-8" src="https://api-maps.yandex.ru/1.1/index.xml" type="text/javascript"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fancy weather</title>
+</head>
+
+<body>
+    <div class="control-unit">
+        <div class="refresh">
+            <button><img src="img/tools-icons/refresh-image-icon.svg" class="refresh-image"
+                    onclick="downloadBackground()"></button>
+        </div>
+        <div class="language">
+            <form>
+                <p>
+                    <select name="language" size="1" onchange="localizePage(this.value)">
+                        <option label="Сhoose-language">
+                        <option value="en" selected>English</option>
+                        <option value="ru">Russian</option>
+                        <option value="be">Belarussian</option>-->
+                    </select>
+                </p>
+            </form>
+        </div>
+        <div class="temperature">
+            <form>
+                <p>
+                    <select name="temperature" size="1" onchange="convertTemperature(this.value)">
+                        <option laletbel="Choose-temperature">
+                        <option value="сelsius" selected> °C</option>
+                        <option value="fahrenheit">°F</option>
+                    </select>
+                </p>
+            </form>
+        </div>
+        <div class="search-form">
+            <p><input type="text" class="search-query">
+                <button type="submit" value="search" onclick="downloadBackground()">search</button>
+            </p>
+        </div>
+    </div>
+    <div class="left-block">
+        <div class="weather-for-today">
+            <h1 class="town"></h1>
+            <h2 class="country"></h2>
+            <p id="doc_time"></p>
+            <p class="temperature-data">
+                <span class="current-temperature-text"></span>
+                <span class="summary">+0</span>
+                <!--<img class="icon-weather" width="60" height="60" onclick="IconWeather()">-->
+            </p>
+        </div>
+        <div class="three-day-weather-forecast">
+            <div class="first-day">
+                <p class="day-name">N</p>
+                <p class="day-temperature">1</p>
+                <p class="night-temperature">2</p>
+            </div>
+            <div class="second-day">   
+                <p class="day-name">N</p>         
+                <p class="day-temperature">1</p>
+                <p class="night-temperature">2</p>
+            </div>
+            <div class="third-day">
+                <p class="day-name">N</p>
+                <p class="day-temperature">1</p>
+                <p class="night-temperature">2</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-block">
+        <div id="map"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
